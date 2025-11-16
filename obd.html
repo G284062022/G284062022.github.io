@@ -192,17 +192,50 @@
 
     </div>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer id="footer">
-      <div class="inner">
-        <ul class="copyright">
-          <li>&copy; Luan ZhengYuan</li>
-          <li>Design: Luan ZhengYuan</li>
-        </ul>
-      </div>
+      ...
     </footer>
 
-    <!-- Scripts（和 index.html 一样复用） -->
+    <!-- 这个是我们新加的『拖动中缝』用的脚本 -->
+    <script>
+      (function () {
+        const root = document.documentElement;             // 整个 <html>
+        const splitter = document.getElementById('splitter'); // 中缝那条竖线
+        if (!splitter) return;
+
+        let isDragging = false;
+
+        // 鼠标按在中缝上
+        splitter.addEventListener('mousedown', function (e) {
+          isDragging = true;
+          e.preventDefault();
+        });
+
+        // 鼠标移动的时候，根据位置算百分比
+        window.addEventListener('mousemove', function (e) {
+          if (!isDragging) return;
+
+          const winWidth = window.innerWidth;
+          let percent = (e.clientX / winWidth) * 100;
+
+          const min = 15;  // 左栏最小 15%
+          const max = 45;  // 左栏最大 45%
+          if (percent < min) percent = min;
+          if (percent > max) percent = max;
+
+          // 修改 CSS 变量 --sidebar-width
+          root.style.setProperty('--sidebar-width', percent + '%');
+        });
+
+        // 松开鼠标，停止拖动
+        window.addEventListener('mouseup', function () {
+          isDragging = false;
+        });
+      })();
+    </script>
+
+    <!-- 下面这几行是你原来就有的模板脚本，保持不动 -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -212,3 +245,4 @@
 
   </body>
 </html>
+
