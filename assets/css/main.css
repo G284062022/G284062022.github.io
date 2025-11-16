@@ -3219,3 +3219,49 @@ input, select, textarea {
 			}
 
 	}
+/* ===== 可拖动的中缝布局（自定义添加） ===== */
+
+:root {
+  /* 左侧栏默认宽度，自己喜欢可以改，比如 26% / 30% */
+  --sidebar-width: 26%;
+}
+
+/* 覆盖 header / main 的宽度设置，只改这两个属性 */
+#header {
+  width: var(--sidebar-width);
+}
+
+#main {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+/* 中间那条可以拖动的中缝 */
+#splitter {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  width: 4px;
+  height: 100vh;
+  cursor: col-resize;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+}
+
+#splitter:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 小屏（手机和平板）时就不显示中缝，恢复普通布局 */
+@media screen and (max-width: 980px) {
+  #splitter {
+    display: none;
+  }
+  #header {
+    width: 100%;
+  }
+  #main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
