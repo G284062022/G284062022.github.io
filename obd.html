@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Web OBD 車両診断システム | Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- 复用 Strata 的样式 -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header（上方固定栏，可按需要简化） -->
+    <header id="header">
+      <div class="inner">
+        <a href="index.html" class="image avatar">
+          <!-- 换成你的头像 -->
+          <img src="images/IMG_2451.jpg" alt="" />
+        </a>
+        <h1>
+          <strong>Web アプリ OBD 車両診断システム</strong><br />
+          Portfolio Project for Software Engineer Interviews
+        </h1>
+        <p>
+          <a href="index.html">← Back to Top Page</a>
+        </p>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- 概要 Section -->
+      <section id="overview">
+        <header class="major">
+          <h2>プロジェクト概要 / Overview</h2>
+        </header>
+
+        <p>
+          本プロジェクトは、<strong>OBD（On Board Diagnostics）</strong> の挙動を
+          Web 上で再現する <strong>車両診断シミュレーター</strong> です。
+          フロントエンドから疑似 ECU にアクセスし、エンジン回転数・車速・冷却水温・
+          バッテリー電圧・DTC（故障コード）などの情報をリアルタイムに可視化します。
+        </p>
+
+        <p>
+          面接では、<strong>「API 設計」「フロントエンドとバックエンドの連携」</strong>、
+          <strong>「状態管理」</strong> を説明するためのデモとして利用できます。
+        </p>
+
+        <ul class="actions">
+          <!-- 替换成你的实际链接 -->
+          <li><a href="#" class="button primary">Live Demo</a></li>
+          <li><a href="https://github.com/你的GitHub账号/你的仓库名" class="button">View on GitHub</a></li>
+        </ul>
+      </section>
+
+      <!-- 技術スタック Section -->
+      <section id="stack">
+        <h2>使用技術 / Tech Stack</h2>
+        <div class="row">
+          <div class="col-6 col-12-small">
+            <h3>フロントエンド</h3>
+            <ul class="alt">
+              <li>Vue 3 + Vite</li>
+              <li>TypeScript（または JavaScript）</li>
+              <li>Axios による REST API 通信</li>
+              <li>レスポンシブデザイン（スマートフォン対応）</li>
+            </ul>
+          </div>
+          <div class="col-6 col-12-small">
+            <h3>バックエンド</h3>
+            <ul class="alt">
+              <li>Java 17 / Spring Boot</li>
+              <li>OBD データの疑似生成ロジック</li>
+              <li>RESTful API 設計（/api/obd/live, /api/obd/dtc など）</li>
+              <li>Docker / AWS（デプロイしていれば）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 機能紹介 Section -->
+      <section id="features">
+        <h2>主要機能 / Key Features</h2>
+        <div class="row">
+          <article class="col-6 col-12-xsmall">
+            <h3>1. ライブデータモニタリング</h3>
+            <p>
+              一定間隔でバックエンド API から OBD データを取得し、
+              <strong>エンジン回転数・車速・冷却水温・スロットル開度</strong> などを
+              ダッシュボード上にリアルタイム表示します。
+            </p>
+          </article>
+
+          <article class="col-6 col-12-xsmall">
+            <h3>2. DTC（故障コード）シミュレーション</h3>
+            <p>
+              ランダムまたは条件付きで故障コードを発生させ、
+              フロントエンドで <strong>警告表示・コード一覧・簡易説明</strong> を表示します。
+              「DTC 消去」ボタンでコードをリセットすることも可能です。
+            </p>
+          </article>
+
+          <article class="col-6 col-12-xsmall">
+            <h3>3. 診断フローの可視化</h3>
+            <p>
+              OBD ポート → ECU → Web API → ブラウザ UI までの流れを
+              図とテキストで説明し、面接でアーキテクチャを説明しやすくしています。
+            </p>
+          </article>
+
+          <article class="col-6 col-12-xsmall">
+            <h3>4. モード切り替え</h3>
+            <p>
+              「通常走行」「異常発生」「DTC クリア」などのシナリオを切り替え、
+              それぞれの状態で値の変化や UI 反応を確認できます。（実装予定項目として書いてもOK）
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- アーキテクチャ Section -->
+      <section id="architecture">
+        <h2>システム構成 / Architecture</h2>
+        <p>
+          実際には画像や図を挿入するとわかりやすいです。
+          下のダミー画像をあなたのアーキテクチャ図に差し替えてください。
+        </p>
+
+        <span class="image fit">
+          <!-- 换成你画好的架构图 -->
+          <img src="images/fulls/01.jpg" alt="System Architecture" />
+        </span>
+
+        <ul>
+          <li>フロントエンド：Vue コンポーネントが一定間隔で API をポーリング</li>
+          <li>バックエンド：Spring Boot が疑似 ECU としてセンサ値を生成し JSON で返却</li>
+          <li>状態管理：診断中フラグ、DTC リスト、グラフ用データなどをフロント側で管理</li>
+        </ul>
+      </section>
+
+      <!-- 自分の役割 Section -->
+      <section id="role">
+        <h2>担当範囲 / My Role</h2>
+        <ul class="alt">
+          <li>要件整理と画面設計（ワイヤーフレーム作成）</li>
+          <li>フロントエンドのコンポーネント設計・実装</li>
+          <li>Spring Boot による API 実装とエラーハンドリング設計</li>
+          <li>GitHub でのバージョン管理、デプロイ設定（GitHub Pages / AWS 等）</li>
+        </ul>
+      </section>
+
+      <!-- 学び・工夫 Section -->
+      <section id="learned">
+        <h2>工夫した点・学び / What I Learned</h2>
+        <p>
+          面接で話せるように、箇条書きで 3〜4 点まとめておくと便利です。
+        </p>
+        <ul>
+          <li>API のレスポンス設計を意識し、フロントエンドから扱いやすい JSON にしたこと。</li>
+          <li>実車ではなくシミュレーターであっても、OBD 診断の流れを意識して値の変化を設計したこと。</li>
+          <li>状態管理・ローディング・エラー表示など、ユーザビリティを意識した UI 実装。</li>
+          <li>GitHub Pages / AWS へのデプロイを通じて、開発〜公開までの一連の流れを経験したこと。</li>
+        </ul>
+      </section>
+
+      <!-- 連絡先 Section（任意） -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          面接用にこのページを共有する場合、連絡先も軽く載せておくと便利です。
+        </p>
+        <ul class="labeled-icons">
+          <li>
+            <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+            <a href="mailto:yourmail@example.com">yourmail@example.com</a>
+          </li>
+          <li>
+            <h3 class="icon brands fa-github"><span class="label">GitHub</span></h3>
+            <a href="https://github.com/你的GitHub账号">github.com/你的GitHub账号</a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Your Name</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP (Strata)</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scripts（和 index.html 一样复用） -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
