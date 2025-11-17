@@ -3271,6 +3271,8 @@ html, body {
 
 #main {
   max-width: none !important;
-  overflow-x: auto;
+  overflow-x: auto;   /* 超过 #main 宽度时，在 #main 底部出现滚动条 */
+  overflow-y: visible;
 }
+
 
