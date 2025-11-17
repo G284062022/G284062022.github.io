@@ -3223,7 +3223,7 @@ input, select, textarea {
 
 :root {
   /* 左侧栏默认宽度，自己喜欢可以改，比如 26% / 30% */
-  --sidebar-width: 26%;
+  --sidebar-width: 35%;
 }
 
 /* 覆盖 header / main 的宽度设置，只改这两个属性 */
