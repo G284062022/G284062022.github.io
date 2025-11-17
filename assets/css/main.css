@@ -3274,5 +3274,26 @@ html, body {
   overflow-x: auto;   /* 超过 #main 宽度时，在 #main 底部出现滚动条 */
   overflow-y: visible;
 }
+/* 两张架构图并排布局 */
+.image-row {
+  display: flex;
+  gap: 1.5em;          /* 两张图之间的间距 */
+  align-items: flex-start;
+}
+
+.image-row .image {
+  width: 50%;          /* 每张占一半宽度 */
+}
+
+/* 小屏幕时自动改回一列就好看一点（可选） */
+@media screen and (max-width: 736px) {
+  .image-row {
+    flex-direction: column;
+  }
+  
+  .image-row .image {
+    width: 100%;
+  }
+}
 
 
