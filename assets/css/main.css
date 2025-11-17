@@ -3295,5 +3295,27 @@ html, body {
     width: 100%;
   }
 }
+/* Architecture 整块强制变宽，让 main 出现横向滚动条 */
+#architecture .wide-section {
+  min-width: 1800px; /* 自己调整大小 */
+}
+
+/* 图片横排，但保持原始大小 */
+.image-row {
+  display: flex;
+  gap: 2em;
+}
+
+.image-row .image img {
+  width: auto;
+  height: auto;
+  max-width: none;  /* 禁止自动缩小 */
+}
+
+/* main 允许横向滚动 */
+#main {
+  overflow-x: auto;
+}
+
 
 
