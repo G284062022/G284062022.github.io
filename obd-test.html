@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>OBD 車両診断システムのテスト仕様書 | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- 复用原来的样式 -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- 子页面专用样式：覆盖掉左侧栏布局，做成简单单栏页面 -->
+  <style>
+    /* 不再使用左侧固定栏布局 */
+    #header { display: none; }
+    #splitter { display: none; }
+
+    body {
+      background: #ffffff;
+    }
+
+    /* 覆盖 main 的宽度和边距，改成居中单栏 */
+    #main {
+      margin: 0 auto;
+      padding: 3em 1.5em 4em;
+      max-width: 960px;
+      width: 100%;
+    }
+
+    .page-header {
+      margin-bottom: 2.5em;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 1.5em;
+    }
+
+    .page-header .back-link {
+      display: inline-block;
+      font-size: 0.9em;
+      margin-bottom: 0.75em;
+    }
+
+    .page-header h1 {
+      margin-bottom: 0.3em;
+    }
+
+    .page-header .subtitle {
+      color: #9a9a9a;
+      font-size: 0.95em;
+    }
+
+    .page-section {
+      margin-bottom: 3em;
+    }
+
+    .page-section h2 {
+      margin-bottom: 0.75em;
+    }
+
+    /* 图片区域：三列自适应 */
+    .page-images {
+      margin-top: 1.5em;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+    }
+
+    .image-grid .image {
+      flex: 1 1 260px; /* 最小 260px，自动换行 */
+    }
+
+    .image-grid .image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 去掉这些图片上的灰色 overlay */
+    .page-images .image:before {
+      display: none;
+    }
+
+    /* 小屏幕优化 */
+    @media screen and (max-width: 736px) {
+      #main {
+        padding: 2em 1.25em 3em;
+      }
+      .page-section {
+        margin-bottom: 2.25em;
+      }
+    }
+
+    /* 简单页脚 */
+    .page-footer {
+      margin-top: 1em;
+      padding-top: 1.5em;
+      border-top: 1px solid #efefef;
+      font-size: 0.85em;
+      color: #b2b2b2;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="main">
+
+    <!-- 顶部：返回首页 + 标题 -->
+    <header class="page-header">
+      <a href="index.html" class="back-link">← Back to Portfolio Top</a>
+      <!-- 这里改成每个页面自己的日文标题 -->
+      <h1>OBD 車両診断システムのテスト仕様書</h1>
+      <!-- 如果不需要英文副标题，可以直接删掉这一行 -->
+      <p class="subtitle">OBD Vehicle Diagnostic System Test Specification</p>
+    </header>
+
+    <!-- 概要 -->
+    <section class="page-section">
+      <h2>概要 / Overview</h2>
+      <p>
+        ここにこのページで紹介したい内容の概要を書きます。
+        プロジェクトの目的、背景、自分の役割などを 2〜3 文でまとめると読みやすいです。
+      </p>
+    </section>
+
+    <!-- 图片区域：把图片路径换成自己项目的 -->
+    <section class="page-section page-images">
+      <h2>画面イメージ / Screenshots</h2>
+      <div class="image-grid">
+        <span class="image">
+          <img src="images/front-1.png" alt="Screenshot 1">
+        </span>
+        <span class="image">
+          <img src="images/front-2.png" alt="Screenshot 2">
+        </span>
+        <span class="image">
+          <img src="images/front-3.png" alt="Screenshot 3">
+        </span>
+      </div>
+    </section>
+
+    <!-- 要点 -->
+    <section class="page-section">
+      <h2>ポイント / Highlights</h2>
+      <ul class="alt">
+        <li>ここに 1 つ目のポイント（例：テスト観点の整理、カバレッジ設計など）。</li>
+        <li>ここに 2 つ目のポイント（例：実際に使ったツールや技術）。</li>
+        <li>ここに 3 つ目のポイント（例：苦労した点・工夫した点）。</li>
+      </ul>
+    </section>
+
+    <!-- 链接 -->
+    <section class="page-section">
+      <h2>リンク / Links</h2>
+      <ul class="actions">
+        <!-- 有 GitHub 就填，没有就删掉 -->
+        <li><a href="https://github.com/your-name/your-repo" class="button primary" target="_blank">View on GitHub</a></li>
+        <!-- 有 Demo 就填，没有可以隐藏 -->
+        <li><a href="https://example.com/demo" class="button" target="_blank">Live Demo</a></li>
+      </ul>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="page-footer">
+      &copy; 2025 Your Name. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- 下面这些 JS 可以保留，也可以删掉（不影响主要布局） -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
