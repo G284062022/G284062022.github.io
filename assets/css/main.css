@@ -3265,3 +3265,12 @@ input, select, textarea {
     width: 100%;
   }
 }
+html, body {
+  overflow-x: auto;
+}
+
+#main {
+  max-width: none !important;
+  overflow-x: auto;
+}
+
