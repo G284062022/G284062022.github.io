@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>OBD 車両診断 Live Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    #main {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 2em 1.5em;
+    }
+
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    .video-container {
+      margin-top: 2em;
+      margin-bottom: 3em;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .back-btn {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+  <div id="main">
+
+    <h1>Live Demo（動画）</h1>
+    <p>以下は、OBD 車両診断システムのデモ動画です。</p>
+
+    <!-- 视频区域 -->
+    <div class="video-container">
+      <video controls poster="images/thumbs/01.jpg">
+        <source src="assets/video/obd-demo.MP4" type="video/MP4">
+        お使いのブラウザは動画再生に対応していません。
+      </video>
+    </div>
+
+    <p>この動画では、ライブデータモニタリング、DTC 発生、クリア動作などの一連の流れを確認できます。</p>
+
+    <ul class="actions back-btn">
+      <li><a href="obd.html" class="button">← Back to Project Page</a></li>
+    </ul>
+
+  </div>
+
+  <!-- 你原本的 scripts 可以不需要，但留着也没关系 -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
