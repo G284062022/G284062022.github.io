@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>前後端の基礎知識 | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- 子ページ用スタイル（1カラム＋カード風） -->
+  <style>
+    #header { display: none; }
+    #splitter { display: none; }
+
+    body {
+      background: #ffffff;
+    }
+
+    #main {
+      margin: 0 auto;
+      padding: 3em 1.5em 4em;
+      max-width: 1040px;
+      width: 100%;
+    }
+
+    .page-header {
+      margin-bottom: 2.5em;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 1.5em;
+    }
+
+    .page-header .back-link {
+      display: inline-block;
+      font-size: 0.9em;
+      margin-bottom: 0.75em;
+    }
+
+    .page-header h1 {
+      margin-bottom: 0.3em;
+    }
+
+    .page-header .subtitle {
+      color: #9a9a9a;
+      font-size: 0.95em;
+    }
+
+    .page-section {
+      margin-bottom: 3em;
+    }
+
+    .page-section h2 {
+      margin-bottom: 0.75em;
+    }
+
+    .page-section p {
+      line-height: 1.9;
+    }
+
+    /* 強調フレーズ */
+    .lead {
+      font-size: 1.02em;
+      line-height: 1.9;
+    }
+
+    /* カード風ボックス */
+    .card {
+      border-radius: 12px;
+      border: 1px solid #eeeeee;
+      padding: 1.5em 1.6em;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+      background: #ffffff;
+    }
+
+    .card + .card {
+      margin-top: 1.2em;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6em;
+    }
+
+    /* 2カラム説明 */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.8em;
+      align-items: flex-start;
+    }
+
+    /* キーワードタグ */
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    .keyword {
+      font-size: 0.8em;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      border: 1px solid #e3e3e3;
+      background: #fafafa;
+    }
+
+    /* 流れ図っぽいリスト */
+    .flow {
+      list-style: none;
+      padding: 0;
+      margin: 0.8em 0 0;
+    }
+
+    .flow li {
+      position: relative;
+      padding-left: 1.4em;
+      margin-bottom: 0.6em;
+    }
+
+    .flow li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #b0b0b0;
+    }
+
+    /* リンクリスト */
+    .link-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.8em;
+    }
+
+    .link-list li {
+      margin-bottom: 0.45em;
+      font-size: 0.95em;
+    }
+
+    .link-list a {
+      text-decoration: underline;
+    }
+
+    /* 小さい画面向け調整 */
+    @media screen and (max-width: 736px) {
+      #main {
+        padding: 2em 1.25em 3em;
+      }
+      .page-section {
+        margin-bottom: 2.25em;
+      }
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.4em;
+      }
+    }
+
+    .page-footer {
+      margin-top: 1em;
+      padding-top: 1.5em;
+      border-top: 1px solid #efefef;
+      font-size: 0.85em;
+      color: #b2b2b2;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="main">
+
+    <!-- ヘッダー -->
+    <header class="page-header">
+      <a href="index.html" class="back-link">← Back to Portfolio Top</a>
+      <h1>前後端の基礎知識</h1>
+      <p class="subtitle">Frontend & Backend Basics for Web Development</p>
+    </header>
+
+    <!-- 概要 -->
+    <section class="page-section">
+      <h2>概要 / Overview</h2>
+      <p class="lead">
+        Web アプリケーションは大きく「フロントエンド」と「バックエンド」に分かれており、
+        それぞれが役割を分担しながら 1 つのサービスとして動作しています。
+        このページでは、開発初心者の方に向けて、前後端の役割や技術スタック、データの流れを
+        シンプルに解説します。
+      </p>
+      <div class="keyword-list">
+        <span class="keyword">フロントエンド</span>
+        <span class="keyword">バックエンド</span>
+        <span class="keyword">API</span>
+        <span class="keyword">HTTP</span>
+        <span class="keyword">DB / SQL</span>
+        <span class="keyword">REST</span>
+        <span class="keyword">JSON</span>
+      </div>
+    </section>
+
+    <!-- フロントエンドとは -->
+    <section class="page-section">
+      <h2>フロントエンドとは？ / What is Frontend?</h2>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>ユーザーと直接触れる「見える部分」</h3>
+          <p>
+            フロントエンドは、ユーザーがブラウザ上で直接触れる「画面側」の部分です。
+            画面のレイアウト、ボタンやフォームの動き、グラフ表示、アニメーションなどを担当します。
+          </p>
+          <ul class="flow">
+            <li>HTML：ページの構造（見出し・段落・フォームなど）を定義</li>
+            <li>CSS：デザインやレイアウト（色・余白・レスポンシブ対応）を調整</li>
+            <li>JavaScript：ボタンのクリック処理や動的な画面更新を実装</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>よく使われるフレームワーク</h3>
+          <p>大規模な画面や複雑な UI を効率よく作るために、フレームワーク・ライブラリが使われます。</p>
+          <div class="keyword-list">
+            <span class="keyword">React</span>
+            <span class="keyword">Vue.js</span>
+            <span class="keyword">Angular</span>
+            <span class="keyword">TypeScript</span>
+          </div>
+          <ul class="link-list">
+            <li>MDN Web Docs（HTML / CSS / JS）  
+              <a href="https://developer.mozilla.org/" target="_blank">https://developer.mozilla.org/</a>
+            </li>
+            <li>React 公式サイト  
+              <a href="https://react.dev/" target="_blank">https://react.dev/</a>
+            </li>
+            <li>Vue.js 公式サイト  
+              <a href="https://vuejs.org/" target="_blank">https://vuejs.org/</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- バックエンドとは -->
+    <section class="page-section">
+      <h2>バックエンドとは？ / What is Backend?</h2>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>画面の裏側で動く「見えない部分」</h3>
+          <p>
+            バックエンドは、ブラウザの裏側で動作するサーバー側の処理を担当します。
+            データベースへのアクセス、業務ロジックの実行、認証・認可、外部サービスとの連携などを行います。
+          </p>
+          <ul class="flow">
+            <li>ブラウザからのリクエスト（例：ログイン、登録、検索）を受け取る</li>
+            <li>必要な処理やデータベース操作を行う</li>
+            <li>結果を JSON などの形式でフロントエンドへ返す</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>代表的なバックエンド技術</h3>
+          <p>言語やフレームワークによって書き方は異なりますが、基本的な役割は共通です。</p>
+          <div class="keyword-list">
+            <span class="keyword">Java / Spring Boot</span>
+            <span class="keyword">Python / Django</span>
+            <span class="keyword">Node.js / Express</span>
+            <span class="keyword">Ruby on Rails</span>
+          </div>
+          <ul class="link-list">
+            <li>Spring Boot 公式ドキュメント  
+              <a href="https://spring.io/projects/spring-boot" target="_blank">https://spring.io/projects/spring-boot</a>
+            </li>
+            <li>Django 公式サイト  
+              <a href="https://www.djangoproject.com/" target="_blank">https://www.djangoproject.com/</a>
+            </li>
+            <li>Express（Node.js）公式  
+              <a href="https://expressjs.com/" target="_blank">https://expressjs.com/</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- データベースと API -->
+    <section class="page-section">
+      <h2>データベースと API / Database & API</h2>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>データベース（DB）の役割</h3>
+          <p>
+            ユーザー情報、商品情報、ログデータなどを永続的に保存するのがデータベースです。
+            バックエンドは SQL などを使って DB とやり取りします。
+          </p>
+          <div class="keyword-list">
+            <span class="keyword">MySQL</span>
+            <span class="keyword">PostgreSQL</span>
+            <span class="keyword">SQLite</span>
+            <span class="keyword">MongoDB</span>
+          </div>
+          <ul class="link-list">
+            <li>PostgreSQL  
+              <a href="https://www.postgresql.org/docs/" target="_blank">https://www.postgresql.org/docs/</a>
+            </li>
+            <li>MySQL  
+              <a href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>API と HTTP リクエスト</h3>
+          <p>
+            フロントエンドとバックエンドは、通常「HTTP」というプロトコルを使って通信します。
+            REST API では、URL と HTTP メソッド（GET / POST / PUT / DELETE など）を組み合わせて
+            データの取得・作成・更新・削除を行います。
+          </p>
+          <ul class="flow">
+            <li>フロントエンド：<code>fetch</code> や <code>axios</code> で API を呼び出す</li>
+            <li>バックエンド：リクエストを受け取り、必要な処理を実行</li>
+            <li>レスポンス：JSON 形式で結果を返し、画面に反映</li>
+          </ul>
+          <ul class="link-list">
+            <li>MDN – HTTP の基礎  
+              <a href="https://developer.mozilla.org/docs/Web/HTTP" target="_blank">
+                https://developer.mozilla.org/docs/Web/HTTP
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 全体の流れ -->
+    <section class="page-section">
+      <h2>前後端のつながり / How Frontend & Backend Work Together</h2>
+      <div class="card">
+        <h3>1 つのリクエストの裏側で起きていること</h3>
+        <ul class="flow">
+          <li>ユーザーがブラウザでフォームに入力し、「送信」ボタンを押す。</li>
+          <li>フロントエンドが入力値をチェックし、必要であればエラー表示。</li>
+          <li>問題がなければ、API（例：<code>/api/users</code>）に HTTP リクエストを送信。</li>
+          <li>バックエンドがリクエストを受け取り、バリデーション・認証・DB 操作を実行。</li>
+          <li>処理結果（成功／エラー）を JSON として返す。</li>
+          <li>フロントエンドが結果を受け取り、「登録完了」のメッセージや次の画面を表示。</li>
+        </ul>
+        <p style="margin-top:0.8em;">
+          実際のプロジェクトでは、ログ記録、エラーハンドリング、セキュリティ対策（認証・CSRF・CORS など）も
+          含めて設計することが重要です。
+        </p>
+      </div>
+    </section>
+
+    <!-- 学習のすすめ -->
+    <section class="page-section">
+      <h2>学習のステップ / How to Start Learning</h2>
+      <div class="card">
+        <ol style="margin:0.2em 0 0.8em 1.2em;">
+          <li>まずは HTML / CSS / JavaScript の基礎を MDN などで一通り学ぶ。</li>
+          <li>小さな静的サイトを作り、フォームや簡単な動き（タブ切り替え等）を実装してみる。</li>
+          <li>バックエンドフレームワーク（例：Spring Boot や Django）で、シンプルな API を作る。</li>
+          <li>フロントエンドから API を呼び出して、JSON データを画面に表示してみる。</li>
+          <li>ログイン機能、データベース連携、エラーハンドリングなどを追加し、少しずつ Web アプリらしくしていく。</li>
+        </ol>
+        <p>
+          小さな「動くもの」を作りながら、疑問が出てきたら公式ドキュメントや書籍で調べていく、
+          というサイクルが成長の近道です。
+        </p>
+      </div>
+    </section>
+
+    <div class="page-footer">
+      &copy; 2025 Your Name. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
