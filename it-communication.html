@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>基本情報技術者試験 学習ノート | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- 子ページ用スタイル（1カラム＋カード風） -->
+  <style>
+    #header { display: none; }
+    #splitter { display: none; }
+
+    body {
+      background: #ffffff;
+    }
+
+    #main {
+      margin: 0 auto;
+      padding: 3em 1.5em 4em;
+      max-width: 1040px;
+      width: 100%;
+    }
+
+    .page-header {
+      margin-bottom: 2.5em;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 1.5em;
+    }
+
+    .page-header .back-link {
+      display: inline-block;
+      font-size: 0.9em;
+      margin-bottom: 0.75em;
+    }
+
+    .page-header h1 {
+      margin-bottom: 0.3em;
+    }
+
+    .page-header .subtitle {
+      color: #9a9a9a;
+      font-size: 0.95em;
+    }
+
+    .page-section {
+      margin-bottom: 3em;
+    }
+
+    .page-section h2 {
+      margin-bottom: 0.75em;
+    }
+
+    .page-section p {
+      line-height: 1.9;
+    }
+
+    .lead {
+      font-size: 1.02em;
+      line-height: 1.9;
+    }
+
+    .card {
+      border-radius: 12px;
+      border: 1px solid #eeeeee;
+      padding: 1.5em 1.6em;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+      background: #ffffff;
+    }
+
+    .card + .card {
+      margin-top: 1.2em;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6em;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    .keyword {
+      font-size: 0.8em;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      border: 1px solid #e3e3e3;
+      background: #fafafa;
+    }
+
+    .link-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.8em;
+    }
+
+    .link-list li {
+      margin-bottom: 0.45em;
+      font-size: 0.95em;
+    }
+
+    .link-list a {
+      text-decoration: underline;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.8em;
+      align-items: flex-start;
+    }
+
+    /* Q&A リスト */
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      margin-top: 1em;
+    }
+
+    .qa-item {
+      padding: 1.1em 1.2em;
+      border-radius: 10px;
+      border: 1px solid #eeeeee;
+      background: #fafafa;
+    }
+
+    .qa-item .q-title {
+      font-weight: 600;
+      margin-bottom: 0.25em;
+    }
+
+    .qa-item .q-body {
+      margin-bottom: 0.5em;
+    }
+
+    .qa-item .a-body {
+      font-size: 0.92em;
+      color: #555;
+    }
+
+    .qa-item .a-body strong {
+      font-weight: 600;
+    }
+
+    .hint {
+      font-size: 0.85em;
+      color: #999;
+      margin-top: 0.25em;
+    }
+
+    /* 小さい画面向け調整 */
+    @media screen and (max-width: 736px) {
+      #main {
+        padding: 2em 1.25em 3em;
+      }
+      .page-section {
+        margin-bottom: 2.25em;
+      }
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.4em;
+      }
+    }
+
+    .page-footer {
+      margin-top: 1em;
+      padding-top: 1.5em;
+      border-top: 1px solid #efefef;
+      font-size: 0.85em;
+      color: #b2b2b2;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="main">
+
+    <!-- ヘッダー -->
+    <header class="page-header">
+      <a href="index.html" class="back-link">← Back to Portfolio Top</a>
+      <h1>基本情報技術者試験 学習ノート</h1>
+      <p class="subtitle">Fundamental Information Technology Engineer Examination (FE)</p>
+    </header>
+
+    <!-- 概要 -->
+    <section class="page-section">
+      <h2>概要 / Overview</h2>
+      <p class="lead">
+        基本情報技術者試験（FE）は、プログラミングだけでなく、
+        アルゴリズム、ネットワーク、データベース、セキュリティ、マネジメントまで
+        幅広く問われる国家試験です。ここでは、私が学習の中でまとめた要点や、
+        実際に解いた練習問題の一部を掲載しています。
+        「ただ受かるため」ではなく、開発現場や自分のプロジェクトにどう活かすか、
+        を意識して学んでいます。
+      </p>
+      <div class="keyword-list">
+        <span class="keyword">アルゴリズム</span>
+        <span class="keyword">ネットワーク</span>
+        <span class="keyword">データベース</span>
+        <span class="keyword">情報セキュリティ</span>
+        <span class="keyword">システム構成</span>
+        <span class="keyword">開発プロセス</span>
+      </div>
+    </section>
+
+    <!-- 公式リンク -->
+    <section class="page-section">
+      <h2>公式情報 / Official Links</h2>
+      <div class="card">
+        <h3>IPA 公式サイト</h3>
+        <ul class="link-list">
+          <li>
+            基本情報技術者試験（FE） 試験概要（IPA）<br>
+            <a href="https://www.ipa.go.jp/shiken/kubun/fe.html" target="_blank">
+              https://www.ipa.go.jp/shiken/kubun/fe.html
+            </a>
+          </li>
+          <li>
+            情報処理技術者試験 過去問題・公開問題<br>
+            <a href="https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html" target="_blank">
+              https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html
+            </a>
+          </li>
+          <li>
+            試験情報トップページ（試験区分一覧）<br>
+            <a href="https://www.ipa.go.jp/shiken/index.html" target="_blank">
+              https://www.ipa.go.jp/shiken/index.html
+            </a>
+          </li>
+        </ul>
+        <p class="hint">
+          ※ 本ページの内容は、私自身の学習ノートです。正確な情報は必ず IPA 公式サイトで確認しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- 学習スタイル -->
+    <section class="page-section">
+      <h2>学習スタイル・方針 / How I Study</h2>
+      <div class="two-column">
+        <div class="card">
+          <h3>1. 広く全体像をつかむ</h3>
+          <p>
+            まずはシラバスと公開問題をベースに、「どんな分野が、どのくらいの比率で出るのか」を把握しました。
+            その上で、苦手な分野（例：マネジメント系、セキュリティ用語など）をリストアップし、
+            毎日少しずつ潰していくスタイルで学習しています。
+          </p>
+          <ul>
+            <li>午前対策：用語・計算問題を中心に、過去問のパターンを整理</li>
+            <li>午後（科目B）対策：アルゴリズムとデータ構造、ネットワーク、DB を重点的に演習</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>2. 実務・自分の開発と結びつける</h3>
+          <p>
+            単に暗記するのではなく、OBD 車両診断システムやスマートスーツケースなど、
+            自分の開発プロジェクトと関連付けて理解するようにしています。
+          </p>
+          <ul>
+            <li>ネットワーク：REST API や HTTP の知識を、自作 Web アプリの設計に反映</li>
+            <li>データベース：正規化・トランザクションの考え方を、自分の DB 設計で実験</li>
+            <li>セキュリティ：認証・セッション管理をポートフォリオの Web アプリに適用</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 練習問題：アルゴリズム・データ構造 -->
+    <section class="page-section">
+      <h2>練習問題① アルゴリズム・データ構造</h2>
+      <p>
+        基本情報の午後問題でも頻出の分野です。ここでは、自分でまとめた練習問題と簡単な解説の一部を載せています。
+      </p>
+
+      <div class="qa-list">
+        <div class="qa-item">
+          <div class="q-title">Q1（探索アルゴリズム）</div>
+          <div class="q-body">
+            昇順に整列済みの配列に対し、二分探索を用いるときの計算量のオーダとして適切なものはどれか。
+            <br>① O(1)　② O(n)　③ O(log n)　④ O(n log n)
+          </div>
+          <div class="a-body">
+            <strong>答え：③ O(log n)</strong><br>
+            毎回探索範囲を 1/2 にしていくため、要素数 n に対しておおよそ log<sub>2</sub>n 回の比較で済みます。
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="q-title">Q2（スタックとキュー）</div>
+          <div class="q-body">
+            先入れ先出し（FIFO）のデータ構造として適切なものはどれか。<br>
+            ① スタック　② キュー　③ ヒープ　④ ハッシュテーブル
+          </div>
+          <div class="a-body">
+            <strong>答え：② キュー</strong><br>
+            スタックは LIFO（後入れ先出し）、キューは FIFO（先入れ先出し）という動作原理の違いを意識して覚えています。
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="q-title">Q3（計算量の比較）</div>
+          <div class="q-body">
+            n が十分に大きいとき、次のうち最も効率が良い（計算量が小さい）ものはどれか。<br>
+            ① O(n^2)　② O(n log n)　③ O(n)　④ O(log n)
+          </div>
+          <div class="a-body">
+            <strong>答え：④ O(log n)</strong><br>
+            オーダの大小関係を感覚的に把握しておくことで、ソートアルゴリズム選択や設計時の判断がしやすくなります。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 練習問題：ネットワーク・セキュリティ -->
+    <section class="page-section">
+      <h2>練習問題② ネットワーク・セキュリティ</h2>
+      <p>
+        Web アプリ開発と直結する分野なので、自分のポートフォリオ案件（OBD システム等）をイメージしながら学んでいます。
+      </p>
+
+      <div class="qa-list">
+        <div class="qa-item">
+          <div class="q-title">Q4（OSI 参照モデル）</div>
+          <div class="q-body">
+            次のうち、OSI 参照モデルの第 4 層（トランスポート層）に属するプロトコルはどれか。<br>
+            ① IP　② TCP　③ HTTP　④ Ethernet
+          </div>
+          <div class="a-body">
+            <strong>答え：② TCP</strong><br>
+            IP は第 3 層、HTTP は第 7 層、Ethernet は第 2 層。  
+            レイヤと代表プロトコルの対応を、ネットワーク設計やトラブルシュートに活かせるよう整理しています。
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="q-title">Q5（暗号方式）</div>
+          <div class="q-body">
+            共通鍵暗号方式と比較したときの公開鍵暗号方式の特徴として、最も適切なものはどれか。<br>
+            ① 暗号化・復号が高速である。<br>
+            ② 鍵配送の問題を軽減できる。<br>
+            ③ 鍵が漏えいしても安全である。<br>
+            ④ 第三者が復号鍵を生成できる。
+          </div>
+          <div class="a-body">
+            <strong>答え：② 鍵配送の問題を軽減できる</strong><br>
+            公開鍵暗号は処理は重いですが、「公開鍵は誰に見られても良い」という性質を利用し、
+            秘密鍵を共有せずに安全な通信を開始できる点がポイントです。
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="q-title">Q6（Web セキュリティ）</div>
+          <div class="q-body">
+            Web アプリケーションにおいて、SQL インジェクション対策として適切なものはどれか。<br>
+            ① 入力値を HTML エスケープする。<br>
+            ② 入力値を暗号化して保存する。<br>
+            ③ プレースホルダ付きのプリペアドステートメントを用いる。<br>
+            ④ Cookie に Secure 属性を付ける。
+          </div>
+          <div class="a-body">
+            <strong>答え：③ プレースホルダ付きのプリペアドステートメントを用いる</strong><br>
+            文字列連結による SQL の生成を避け、バインド変数を用いる設計を自分の Web アプリでも徹底するようにしています。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 練習問題：データベース・設計 -->
+    <section class="page-section">
+      <h2>練習問題③ データベース・システム設計</h2>
+
+      <div class="qa-list">
+        <div class="qa-item">
+          <div class="q-title">Q7（正規化）</div>
+          <div class="q-body">
+            1 つの表に「顧客ID」「顧客名」「注文ID」「注文日」がすべて入っており、
+            同じ顧客が複数の注文を行うと行が重複する。この表に対して適切な正規化方針はどれか。<br>
+            ① 列を増やして 1 行にすべての注文を格納する。<br>
+            ② 顧客と注文を別の表に分割し、顧客IDで関連付ける。<br>
+            ③ 顧客名を削除する。<br>
+            ④ 注文日を別表に移す。
+          </div>
+          <div class="a-body">
+            <strong>答え：② 顧客と注文を別の表に分割し、顧客IDで関連付ける</strong><br>
+            「顧客：注文 = 1：多」の関係を意識し、エンティティごとに表を分けることが第 3 正規形への基本的なステップです。
+          </div>
+        </div>
+
+        <div class="qa-item">
+          <div class="q-title">Q8（トランザクション）</div>
+          <div class="q-body">
+            トランザクションの ACID 特性のうち、「途中の状態が外部から見えない」ことを表すものはどれか。<br>
+            ① 原子性（Atomicity）<br>
+            ② 一貫性（Consistency）<br>
+            ③ 独立性（Isolation）<br>
+            ④ 永続性（Durability）
+          </div>
+          <div class="a-body">
+            <strong>答え：③ 独立性（Isolation）</strong><br>
+            自作の Web アプリでも、複数ユーザの同時更新やロールバックを意識した実装を行うように意識しています。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 応用・実務とのつながり -->
+    <section class="page-section">
+      <h2>応用・実務へのつながり / Applications in My Projects</h2>
+      <div class="card">
+        <h3>プロジェクトへの活用例</h3>
+        <ul>
+          <li>
+            <strong>OBD 車両診断システム：</strong>
+            ネットワークと API の知識をもとに、Vue フロントエンドと Spring Boot バックエンド間の
+            REST 通信設計・エラーハンドリング・ログ設計を整理。
+          </li>
+          <li>
+            <strong>スマートスーツケース：</strong>
+            組込みシステムの知識を活かし、Raspberry Pi ＋ Arduino の役割分担や、
+            センサデータを扱う際のリアルタイム性・信頼性について検討。
+          </li>
+          <li>
+            <strong>研究活動：</strong>
+            データベース・統計・セキュリティの知識を、絵文字共起分析や Web アプリの研究プロトタイプに適用。
+          </li>
+        </ul>
+        <p>
+          試験勉強で得た知識を「暗記」で終わらせず、自分の開発や研究テーマの設計に落とし込むことで、
+          技術の理解を深めるようにしています。
+        </p>
+      </div>
+    </section>
+
+    <div class="page-footer">
+      &copy; 2025 Your Name. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
