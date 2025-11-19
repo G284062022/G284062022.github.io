@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>研究室紹介 | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- 复用 Strata 的样式 -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- 子页面专用样式：单栏 + 卡片布局 + 稍微灵动一点的排版 -->
+  <style>
+    /* 不使用左侧固定栏 */
+    #header { display: none; }
+    #splitter { display: none; }
+
+    body {
+      background: #ffffff;
+    }
+
+    #main {
+      margin: 0 auto;
+      padding: 3em 1.5em 4em;
+      max-width: 980px;
+      width: 100%;
+    }
+
+    .page-header {
+      margin-bottom: 2.5em;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 1.5em;
+    }
+
+    .page-header .back-link {
+      display: inline-block;
+      font-size: 0.9em;
+      margin-bottom: 0.75em;
+    }
+
+    .page-header h1 {
+      margin-bottom: 0.3em;
+    }
+
+    .page-header .subtitle {
+      color: #9a9a9a;
+      font-size: 0.95em;
+    }
+
+    .page-header .lead {
+      margin-top: 0.8em;
+      font-size: 0.98em;
+      line-height: 1.8;
+    }
+
+    .page-section {
+      margin-bottom: 3em;
+    }
+
+    .page-section h2 {
+      margin-bottom: 0.75em;
+    }
+
+    /* 两列卡片布局：研究テーマ等用 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin-top: 1.25em;
+    }
+
+    .card {
+      flex: 1 1 280px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      padding: 1.3em 1.4em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      background: #ffffff;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5em;
+    }
+
+    .card .tagline {
+      font-size: 0.9em;
+      color: #999;
+      margin-bottom: 0.6em;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 1.25em;
+      font-size: 0.95em;
+    }
+
+    /* タグ样式：技术栈、关键词之类 */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-top: 0.8em;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      font-size: 0.85em;
+      color: #555;
+      background: #fafafa;
+    }
+
+    /* 时间轴风格：一日の流れ */
+    .timeline {
+      margin-top: 1.2em;
+      border-left: 2px solid #e0e0e0;
+      padding-left: 1.2em;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.4em;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.25em;
+      top: 0.3em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff9f43;
+    }
+
+    .timeline-time {
+      font-size: 0.85em;
+      color: #999;
+      margin-bottom: 0.2em;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.2em;
+    }
+
+    .timeline-desc {
+      font-size: 0.95em;
+    }
+
+    /* 图片区域：三列自适应 */
+    .page-images {
+      margin-top: 1.5em;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+    }
+
+    .image-grid .image {
+      flex: 1 1 260px;
+    }
+
+    .image-grid .image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .page-images .image:before {
+      display: none;
+    }
+
+    .image-caption {
+      font-size: 0.85em;
+      color: #999;
+      margin-top: 0.3em;
+    }
+
+    /* 链接按钮区域 */
+    .page-links .actions {
+      margin-top: 1em;
+    }
+
+    /* 小屏幕优化 */
+    @media screen and (max-width: 736px) {
+      #main {
+        padding: 2em 1.25em 3em;
+      }
+      .page-section {
+        margin-bottom: 2.25em;
+      }
+    }
+
+    .page-footer {
+      margin-top: 1.5em;
+      padding-top: 1.5em;
+      border-top: 1px solid #efefef;
+      font-size: 0.85em;
+      color: #b2b2b2;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="main">
+
+    <!-- 顶部：返回首页 + 标题 -->
+    <header class="page-header">
+      <a href="index.html" class="back-link">← Back to Portfolio Top</a>
+      <h1>研究室紹介</h1>
+      <p class="subtitle">Laboratory for Communication & Intelligent Systems</p>
+      <p class="lead">
+        「コンピュータを単独ではなく、<br />
+        コンピュータの外の世界にある道具たち（ハードウェア）と結びつけて、新しいシステムを作る研究をしています。
+      </p>
+    </header>
+
+    <!-- 所属研究室について -->
+    <section class="page-section">
+      <h2>所属研究室について / About the Lab(拓殖大学工学科高橋研)</h2>
+      <p>
+        本研究室では、コンピュータだけで完結するソフトウェアではなく、 <strong>現実世界のハードウェア</strong> と組み合わせて動く
+        <strong>「組込みシステム」</strong> の開発を中心に研究を行っています。<br />
+        センサー、マイコン、通信モジュールなどの電子回路を自作しながら、
+       その上で動作する制御プログラムやアプリケーションを設計し、
+       「ハードウェアとソフトウェアを一体として最適化する」ことを目的としています。
+      </p>
+      <p>
+        組込みシステム、ロボティクス、回路設計、信号処理など、<strong>ソフトとハードの両面</strong> からアプローチする点が特徴です。
+        作って動かすことで理解を深める、実験的で実践的な研究を重視しています。
+      </p>
+      <div class="tag-list">
+        <span class="tag">信号処理</span>
+        <span class="tag">部品や配線</span>
+        <span class="tag">Webアプリ開発</span>
+        <span class="tag">IoT / Raspberry Pi</span>
+        <span class="tag">シリアル通信</span>
+      </div>
+    </section>
+
+    <!-- 研究テーマ -->
+    <section class="page-section">
+      <h2>主な研究テーマ / Research Topics</h2>
+
+      <div class="card-grid">
+        
+        <!-- カード1 -->
+        <article class="card">
+          <h3>自動追従型スマートスーツケース</h3>
+          <p class="tagline">Raspberry Pi × OpenCV × arduino × オムニホイールロボット</p>
+          <ul>
+            <li>顔認識により所有者を検出し、自動で追従するスーツケースロボットを開発。</li>
+            <li>オムニホイールを用いた全方向移動制御を Python で実装。</li>
+            <li>カメラサーボとモータ制御を連携させて、滑らかな追従挙動を実現。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 研究スタイル・環境 -->
+    <section class="page-section">
+      <h2>研究スタイル・環境 / How We Work</h2>
+      <p>
+        本研究室では、単に論文を書くことだけでなく、<strong>「動くものを作る」</strong> ことを大切にしています。
+        要件整理から設計、実装、実験、発表まで、一連のプロセスを自分で回すことを目標にしています。
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>開発環境</h3>
+          <ul>
+            <li>言語：Java, Python, TypeScript, JavaScript など</li>
+            <li>フレームワーク：Spring Boot, Vue 3, Streamlit 等</li>
+            <li>プラットフォーム：Raspberry Pi, Linux, macOS</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">SQLite / MySQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 一日の流れ -->
+    <section class="page-section">
+      <h2>研究室での一日 / A Day in the Lab</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">10:00</div>
+          <div class="timeline-title">登校・メール確認</div>
+          <div class="timeline-desc">
+            先生や共同研究者からのメールを確認し、その日の作業内容を整理します。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11:00</div>
+          <div class="timeline-title">実装・実験</div>
+          <div class="timeline-desc">
+            コードの実装やデバッグ、センサーやロボットの動作確認など、手を動かして試行錯誤する時間です。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">14:00</div>
+          <div class="timeline-title">ゼミ・ミーティング</div>
+          <div class="timeline-desc">
+            進捗報告や論文の輪読を行い、フィードバックをもらいながら次のステップを決めていきます。
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">16:00</div>
+          <div class="timeline-title">資料作成・まとめ</div>
+          <div class="timeline-desc">
+            実験結果を整理し、スライドや論文のドラフトに反映させていきます。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 研究室の雰囲気（写真） -->
+    <section class="page-section page-images">
+      <h2>研究室の雰囲気 / Lab Photos</h2>
+      <div class="image-grid">
+        <span class="image">
+          <img src="images/lab-1.jpg" alt="研究室の作業風景 1">
+          <div class="image-caption">PC でのコーディング・デバッグの様子</div>
+        </span>
+        <span class="image">
+          <img src="images/lab-2.jpg" alt="研究室の作業風景 2">
+          <div class="image-caption">Raspberry Pi やセンサーを使った実験</div>
+        </span>
+        <span class="image">
+          <img src="images/lab-3.jpg" alt="研究室の作業風景 3">
+          <div class="image-caption">ミーティング・ディスカッションの様子</div>
+        </span>
+      </div>
+    </section>
+
+    <!-- 链接 -->
+    <section class="page-section page-links">
+      <h2>関連リンク / Links</h2>
+      <ul class="actions">
+        <!-- 研究室公式ページがあればここに -->
+        <li><a href="https://feng.takushoku-u.ac.jp/course/cs/lab/ttakahashi.html" class="button" target="_blank">研究室公式サイト</a></li>
+        <!-- 自分のプロジェクトページへ誘導 -->
+        <li><a href="https://graduate.takushoku-u.ac.jp/engineering/kyouin/kyouin01/take/index.html" class="button primary">研究室の情報</a></li>
+      </ul>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="page-footer">
+      &copy; 2025 Luan ZhengYuan. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- JS（Strata の効果をそのまま利用） -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
