@@ -156,14 +156,65 @@
     </section>
 
     <!-- 要点 -->
-    <section class="page-section">
-      <h2>ポイント / Highlights</h2>
-      <ul class="alt">
-        <li>。</li>
-        <li>。</li>
-        <li>。</li>
-      </ul>
-    </section>
+    <!-- 要点（メモ風カード） -->
+<section class="page-section">
+  <h2>ポイント / Highlights</h2>
+
+  <div style="
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      margin-top: 1.5em;
+    ">
+
+    <!-- memo 1 -->
+    <div style="
+        background: #fff8c6;
+        border-left: 6px solid #ffd24d;
+        padding: 1.2em 1.4em;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        font-size: 0.96em;
+        line-height: 1.9;
+      ">
+      <strong>✔ 仕様とテスト項目の一貫性を重視した設計</strong><br>
+      各テストケースがどの要件に紐づいているかを明確化し、仕様漏れ・テスト漏れを防ぐ
+      トレーサビリティを意識した構成にしています。
+    </div>
+
+    <!-- memo 2 -->
+    <div style="
+        background: #e9f7ff;
+        border-left: 6px solid #5ab4f8;
+        padding: 1.2em 1.4em;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        font-size: 0.96em;
+        line-height: 1.9;
+      ">
+      <strong>✔ 正常系だけでなく異常系・例外系も幅広くカバー</strong><br>
+      ネットワークエラー、バックエンド停止、API タイムアウトなど、実運用で起こり得る
+      トラブルも想定し、ユーザ体験を損なわない動作を重点的に評価します。
+    </div>
+
+    <!-- memo 3 -->
+    <div style="
+        background: #f6ecff;
+        border-left: 6px solid #c38bff;
+        padding: 1.2em 1.4em;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        font-size: 0.96em;
+        line-height: 1.9;
+      ">
+      <strong>✔ UI/UX と技術的品質の両面から検証</strong><br>
+      レイアウト崩れ・操作性・レスポンシブ対応の確認に加え、API 呼び出し回数の最適化や
+      二重リクエスト防止など、フロントエンドの内部品質まで踏み込んでチェックします。
+    </div>
+
+  </div>
+</section>
+
 
     <!-- 链接 -->
     <section class="page-section">
