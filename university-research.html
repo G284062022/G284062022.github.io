@@ -224,9 +224,8 @@
   gap: 1rem;
 }
 
-/* 让图片不要太大 */
 .carousel-item {
-  flex: 0 0 70%;  /* 手机占 70% */
+  flex: 0 0 70%;      /* 手机大概 70% 宽 */
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
@@ -234,18 +233,18 @@
 
 @media screen and (min-width: 980px) {
   .carousel-item {
-    flex: 0 0 40%;  /* 电脑占 40% */
+    flex: 0 0 45%;    /* 电脑大概 45% 宽 */
   }
 }
 
-/* 控制图片大小 */
+
 .carousel-item .image img {
   width: 100%;
-  max-width: 500px;   /* 图片不超过 500px */
-  max-height: 320px;  /* 限制高度 */
-  object-fit: cover;  /* 自动裁切 */
+  height: auto;        /* 按原比例缩放 */
+  max-width: 500px;    /* 不超过 500px 宽 */
   border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  display: block;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .image-caption {
