@@ -211,7 +211,10 @@
     /* ================================
    Instagram 風スライドギャラリー
 ================================ */
-.carousel {
+/* ================================
+   スマートスーツケース用スライダー
+================================ */
+.suitcase-carousel {
   margin-top: 1.2em;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -219,41 +222,43 @@
   padding-bottom: 0.5em;
 }
 
-.carousel-track {
+.suitcase-track {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+  padding-bottom: 0.3em;
 }
 
-.carousel-item {
-  flex: 0 0 70%;      /* 手机大概 70% 宽 */
+.suitcase-item {
+  flex: 0 0 auto;
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
 }
 
-@media screen and (min-width: 980px) {
-  .carousel-item {
-    flex: 0 0 45%;    /* 电脑大概 45% 宽 */
-  }
-}
-
-
-.carousel-item .image img {
-  width: 100%;
-  height: auto;        /* 按原比例缩放 */
-  max-width: 500px;    /* 不超过 500px 宽 */
-  border-radius: 10px;
-  display: block;
+/* 卡片本体 */
+.suitcase-slide {
+  background: #ffffff;
+  border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  overflow: hidden;
+  max-width: 420px;
 }
 
-.image-caption {
-  margin-top: 0.4em;
+/* 照片：按比例缩放，不裁剪 */
+.suitcase-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 说明文字 */
+.suitcase-caption {
+  padding: 0.5em 0.9em 0.7em;
   font-size: 0.85em;
-  color: #888;
+  color: #666;
 }
 
-/* 下部のインジケータードット */
+/* 下方的小圆点 */
 .carousel-dots {
   margin-top: 0.4em;
   text-align: center;
@@ -271,6 +276,7 @@
 .carousel-dot.is-active {
   background: #ff9f43;
 }
+
 
   </style>
 </head>
