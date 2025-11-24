@@ -208,6 +208,67 @@
       color: #b2b2b2;
       text-align: center;
     }
+    /* ================================
+   Instagram 風スライドギャラリー
+================================ */
+.carousel {
+  margin-top: 1.2em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5em;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+}
+
+/* パソコン画面では少し小さめ */
+@media screen and (min-width: 980px) {
+  .carousel-item {
+    flex: 0 0 60%;
+  }
+}
+
+.carousel-item .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.image-caption {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  color: #888;
+}
+
+/* 下部のインジケータードット */
+.carousel-dots {
+  margin-top: 0.4em;
+  text-align: center;
+}
+
+.carousel-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ddd;
+  margin: 0 4px;
+}
+
+.carousel-dot.is-active {
+  background: #ff9f43;
+}
+
   </style>
 </head>
 
