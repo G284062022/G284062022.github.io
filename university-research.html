@@ -276,7 +276,30 @@
 .carousel-dot.is-active {
   background: #ff9f43;
 }
+/* スマートスーツケースのデモ動画用 */
+.suitcase-video {
+  margin-top: 1.5em;
+  text-align: center;
+}
 
+.suitcase-video h3 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color: #555;
+}
+
+.suitcase-video video {
+  width: 100%;
+  max-width: 480px;   /* 不用太大，这里控制最大宽度 */
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.suitcase-video .video-caption {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  color: #777;
+}
 
   </style>
 </head>
@@ -375,6 +398,16 @@
           <span class="carousel-dot"></span>
           <span class="carousel-dot"></span>
         </div>
+      </div>
+      <div class="suitcase-video">
+        <h3>Demo Movie</h3>
+        <video controls poster="images/suitcase-thumb.jpg">
+          <source src="assets/video/suitcase-demo.mp4" type="video/mp4">
+          お使いのブラウザでは動画を再生できません。
+        </video>
+        <p class="video-caption">
+          実際の動作です。
+        </p>
       </div>
 
     </section>
